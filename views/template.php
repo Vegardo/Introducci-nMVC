@@ -52,7 +52,10 @@
 			color: black;
 		}
 		h2{
-			color:red;
+			color:#000;
+			font-family: "VT323", monospace;
+			font-size: 35px;
+			margin-top: 10px;
 		}
 	</style>
 </head>
@@ -61,10 +64,13 @@
 	<h1>Template</h1>
 </header>
 <?php
-include "views/modules/navigation.php"
+include "views/modules/navigation.php" #podemos modular el template con el metodo include 
 ?>
 <section>
-	
+	<?php
+     $b = new MvcController();#creamos un objeto a partir de la clase MvcController
+     $b -> enlacesPaginaControlador();#ejecutamos la función que se encuentra en esa clase
+	?>
 </section>
 </body>
 </html>
