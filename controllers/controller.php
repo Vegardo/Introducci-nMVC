@@ -4,11 +4,21 @@
       include "views/template.php";
  	}
 
-    public function enlacesPaginaControlador(){#metodo ó función publica
-    	$enlacesControlador = $_GET["variable-get"];#sintaxis variable GET ($_GET["NOMBRE DE LA VARIABLE"])
-         $respuesta = EnlacesPaginas::EnlacesPaginasModelo($enlacesControlador);
-         include $respuesta;   
-    }
+    public function enlacesPaginaControlador(){
+          if(isset($_GET["variable-get"])){ #isset sirve para indicar que la variable trae información
+          	$enlacesControlador = $_GET["variable-get"];#sintaxis variable GET ($_GET["NOMBRE DE LA VARIABLE"])
+         }
+           else{
+         	$enlacesControlador = "inicio";
+         }
 
- }
+    	    
+            $respuesta = EnlacesPaginas::EnlacesPaginasModelo($enlacesControlador);
+         
+        
+           include $respuesta;   
+    }
+}
+
+ 
 ?>
